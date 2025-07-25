@@ -1,3 +1,6 @@
+// components/docs/TableOfContents.tsx
+import React from "react";
+
 export default function TableOfContents() {
   const sections = [
     { id: "installation", title: "Installation" },
@@ -5,10 +8,12 @@ export default function TableOfContents() {
     { id: "api-reference", title: "API Reference" },
     { id: "styling", title: "Styling" },
     { id: "typescript", title: "TypeScript" },
-    { id: "utilities", title: "Utilities & Hooks" },
+    { id: "utilities-hooks", title: "Utilities & Hooks" }, // Updated ID
+    { id: "performance", title: "Performance" }, // New Section
     { id: "examples", title: "Examples" },
     { id: "flutter", title: "Flutter Package" },
   ];
+
   return (
     <div className="bg-white dark:bg-gray-900 rounded-lg border border-gray-200 dark:border-gray-700 p-6 sticky top-24">
       <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">

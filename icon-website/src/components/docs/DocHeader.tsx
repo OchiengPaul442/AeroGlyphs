@@ -1,3 +1,5 @@
+// components/docs/DocHeader.tsx
+import React from "react";
 import { motion } from "framer-motion";
 
 export default function DocHeader() {
@@ -13,7 +15,7 @@ export default function DocHeader() {
           Documentation
         </motion.h1>
         <p className="max-w-2xl mx-auto text-lg text-gray-600 dark:text-gray-300">
-          Everything you need to get started with AirQo Icons.
+          Everything you need to get started with AirQo Icons for React.
         </p>
       </div>
     </div>
