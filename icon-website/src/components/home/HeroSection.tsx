@@ -1,3 +1,4 @@
+// components/home/HeroSection.tsx
 import React from "react";
 import Link from "next/link";
 import { ArrowRight, Download } from "lucide-react";
@@ -16,9 +17,11 @@ export default function HeroSection() {
         Beautiful <span style={{ color: modernBlue }}>React Icons</span> for
         Modern&nbsp;Web
       </h1>
+      {/* Minor update for consistency with package description */}
       <p className="mx-auto max-w-2xl mt-6 text-lg sm:text-xl text-gray-600 dark:text-gray-300">
-        High-quality React icon components with TypeScript support. Thousands of
-        icons, fully customizable.
+        High-quality React icon components with TypeScript support.{" "}
+        {/* Updated number */}
+        1,383+ icons, fully customizable.
       </p>
       <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
         <Link

@@ -1,13 +1,15 @@
+// components/home/FeaturesSection.tsx
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
-import { Zap, Code, Palette, Search } from "lucide-react";
+import { Zap, Code, Palette, Search, Layers, ZapIcon } from "lucide-react"; // Added icons
 const modernBlue = "#0A84FF";
 
 const features = [
   {
+    // Updated count
     icon: <Zap className="h-6 w-6" />,
-    title: "1 000+ Icons",
+    title: "1,383+ Icons",
     description: "Comprehensive collection for every use case",
   },
   {
@@ -18,12 +20,23 @@ const features = [
   {
     icon: <Palette className="h-6 w-6" />,
     title: "Fully Customizable",
-    description: "Size, color, stroke – all via props",
+    description: "Size, color, className – all via props",
   },
   {
     icon: <Search className="h-6 w-6" />,
+    title: "Advanced Search",
+    description: "Powered by Fuse.js for intelligent matching", // Added detail from docs
+  },
+  {
+    // Added feature from docs
+    icon: <Layers className="h-6 w-6" />,
+    title: "22 Categories",
+    description: "Organized icons for easy browsing",
+  },
+  {
+    icon: <ZapIcon className="h-6 w-6" />, // Different icon for Tree-shaking
     title: "Tree Shakable",
-    description: "Import only what you need",
+    description: "Import only what you need for smaller bundles",
   },
 ];
 
@@ -43,7 +56,9 @@ export default function FeaturesSection() {
         <p className="text-center text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto mb-12">
           Built for developers, designed for users.
         </p>
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {" "}
+          {/* Adjusted grid for 6 items */}
           {features.map((f, i) => (
             <motion.div
               key={f.title}

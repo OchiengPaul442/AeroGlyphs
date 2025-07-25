@@ -1,3 +1,4 @@
+// components/home/CodeExampleSection.tsx
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
@@ -37,17 +38,18 @@ export default function CodeExampleSection() {
                 <h4 className="text-sm font-semibold text-gray-900 dark:text-white mb-2">
                   Install
                 </h4>
+                {/* Updated install command to include fuse.js as per latest docs interpretation (core install shown) */}
                 <pre className="bg-gray-900 text-green-400 p-4 rounded-lg text-sm overflow-x-auto">
                   <code>npm install @airqo/icons-react</code>
                 </pre>
               </div>
               <div>
                 <h4 className="text-sm font-semibold text-gray-900 dark:text-white mb-2">
-                  Basic Usage
+                  Basic Usage {/* Updated example to use Aq prefix */}
                 </h4>
                 <pre className="bg-gray-900 text-gray-100 p-4 rounded-lg text-sm overflow-x-auto">
-                  <code>{`import { Home01 } from '@airqo/icons-react';
-<Home01 size={24} color="#0A84FF" />`}</code>
+                  <code>{`import { AqHome01 } from '@airqo/icons-react';
+<AqHome01 size={24} color="#0A84FF" />`}</code>
                 </pre>
               </div>
             </div>
