@@ -14,7 +14,7 @@ export default function CodeBlock({ code, title, language }: Props) {
     try {
       await navigator.clipboard.writeText(code);
       toast.success("Copied!");
-    } catch (error) {
+    } catch {
       toast.error("Failed to copy to clipboard");
     }
   };

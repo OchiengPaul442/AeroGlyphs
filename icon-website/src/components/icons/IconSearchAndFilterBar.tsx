@@ -3,7 +3,6 @@
 import React, { useState } from "react";
 import { Search, Filter } from "lucide-react";
 import { useIconGroups } from "@airqo/icons-react"; // Import hook for groups
-import type { IconGroup } from "@airqo/icons-react"; // Import type for group
 
 interface Props {
   value: string;

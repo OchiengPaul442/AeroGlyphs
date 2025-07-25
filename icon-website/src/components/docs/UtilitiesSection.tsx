@@ -142,7 +142,7 @@ function GroupedIconBrowser() {
           <code className="bg-gray-100 dark:bg-gray-800 px-1.5 py-0.5 rounded text-sm">
             useIcon(iconName: string)
           </code>{" "}
-          - Fetch a single icon's metadata.
+          - Fetch a single icon&apos;s metadata.
         </li>
         <li>
           <code className="bg-gray-100 dark:bg-gray-800 px-1.5 py-0.5 rounded text-sm">
