@@ -51,7 +51,7 @@ export default function FeaturesSection() {
     >
       <div className="mx-auto max-w-7xl px-4">
         <h2 className="text-center text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-          Why Choose AirQO Icons?
+          Why Choose AirQo Icons?
         </h2>
         <p className="text-center text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto mb-12">
           Built for developers, designed for users.

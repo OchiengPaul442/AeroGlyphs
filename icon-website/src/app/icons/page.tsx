@@ -1,8 +1,7 @@
-// app/icons/page.tsx (or your page component file)
 "use client";
-import React, { useState } from "react";
-import IconLibraryHeader from "@/components/icons/IconLibraryHeader"; // Ensure path is correct
-import IconSearchAndFilterBar from "@/components/icons/IconSearchAndFilterBar"; // Updated component name
+import React, { useState, useMemo } from "react";
+import IconLibraryHeader from "@/components/icons/IconLibraryHeader";
+import IconSearchAndFilterBar from "@/components/icons/IconSearchAndFilterBar";
 import IconGrid from "@/components/icons/IconGrid";
 import IconPreviewDialog from "@/components/icons/IconPreviewDialog";
 import { useIconSearch } from "@airqo/icons-react";
@@ -10,7 +9,7 @@ import type { IconMetadata } from "@airqo/icons-react";
 
 export default function IconLibraryPage() {
   const [query, setQuery] = useState("");
-  const [selectedGroup, setSelectedGroup] = useState<string | null>(null); // State for group filter
+  const [selectedGroup, setSelectedGroup] = useState<string | null>(null);
   const [selectedIcon, setSelectedIcon] = useState<IconMetadata | null>(null);
   const [isDialogOpen, setIsDialogOpen] = useState(false);
 
@@ -18,25 +17,34 @@ export default function IconLibraryPage() {
   const { results: searchResults, isLoading: isSearching } = useIconSearch(
     query,
     {
-      // You can add search options here if needed, e.g., maxResults
+      // You can add search options here if needed
     }
   );
 
+  // Filter results by selected group
+  const filteredResults = useMemo(() => {
+    if (!selectedGroup) return searchResults;
+    return searchResults.filter((icon) => icon.group === selectedGroup);
+  }, [searchResults, selectedGroup]);
+
+  const clearSearch = () => {
+    setQuery("");
+  };
+
   return (
-    <div className="flex flex-col min-h-screen bg-gray-50 dark:bg-gray-900">
+    <div className="flex flex-col min-h-screen overflow-y-auto bg-gray-50 dark:bg-gray-900">
       <IconLibraryHeader />
-      {/* Pass group filter state and setter to the bar */}
       <IconSearchAndFilterBar
         value={query}
         onChange={setQuery}
         selectedGroup={selectedGroup}
         onGroupChange={setSelectedGroup}
+        onClearSearch={clearSearch}
       />
-      {/* Pass search results, loading state, and group filter to grid */}
       <IconGrid
-        icons={searchResults}
+        icons={filteredResults}
         isLoading={isSearching}
-        selectedGroup={selectedGroup} // Pass group filter to grid
+        selectedGroup={selectedGroup}
         onSelect={(icon) => {
           setSelectedIcon(icon);
           setIsDialogOpen(true);
