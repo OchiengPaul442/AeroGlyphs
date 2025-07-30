@@ -8,6 +8,7 @@ export default function TableOfContents() {
     { id: "api-reference", title: "API Reference" },
     { id: "styling", title: "Styling" },
     { id: "typescript", title: "TypeScript" },
+    { id: "vue", title: "Vue 3 Package" },
     { id: "utilities-hooks", title: "Utilities & Hooks" }, // Updated ID
     { id: "performance", title: "Performance" }, // New Section
     { id: "examples", title: "Examples" },

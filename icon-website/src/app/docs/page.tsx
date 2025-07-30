@@ -8,6 +8,7 @@ import QuickStartSection from "@/components/docs/QuickStartSection";
 import APIReferenceSection from "@/components/docs/APIReferenceSection";
 import StylingSection from "@/components/docs/StylingSection";
 import TypeScriptSection from "@/components/docs/TypeScriptSection";
+import VueSection from "@/components/docs/VueSection";
 import UtilitiesAndHooksSection from "@/components/docs/UtilitiesAndHooksSection"; // Renamed & Enhanced
 import ExamplesSection from "@/components/docs/ExamplesSection";
 import FlutterSection from "@/components/docs/FlutterSection";
@@ -29,6 +30,7 @@ export default function DocsPage() {
             <APIReferenceSection />
             <StylingSection />
             <TypeScriptSection />
+            <VueSection />
             <UtilitiesAndHooksSection /> {/* Updated Component */}
             <PerformanceSection /> {/* New Component */}
             <ExamplesSection />

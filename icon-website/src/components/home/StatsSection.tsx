@@ -27,10 +27,10 @@ export default function StatsSection() {
       value: `${iconCount !== null ? iconCount : "1,383"}+`,
     },
     // Use 22 groups as per documentation
-    { label: "Icon Categories", value: "22+" },
-    // Use typical usage size from docs
-    { label: "Typical Bundle", value: "~50-100KB" },
-    { label: "React 18+", value: "Compatible" },
+    { label: "Icon Categories", value: "22" },
+    // Show supported frameworks
+    { label: "Frameworks", value: "3" },
+    { label: "Bundle per Icon", value: "~2-6KB" },
   ];
 
   return (

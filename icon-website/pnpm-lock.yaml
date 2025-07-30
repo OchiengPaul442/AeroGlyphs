@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@airqo/icons-react':
-        specifier: ^0.2.0
-        version: 0.2.0(react@19.1.0)
+        specifier: ^0.2.6
+        version: 0.2.6(react@19.1.0)
       '@headlessui/react':
         specifier: ^2.2.4
         version: 2.2.4(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
@@ -84,8 +84,8 @@ importers:
 
 packages:
 
-  '@airqo/icons-react@0.2.0':
-    resolution: {integrity: sha512-VeuPgwtoBdNSi35Pm4/Qa9FYGYUMmbiHY+8/7x26oSYg3fsFI4/r6lAjXam/FcxcqG8AW5ZnKddt1meKJUYSjg==}
+  '@airqo/icons-react@0.2.6':
+    resolution: {integrity: sha512-e1K5GOOC3eUpaompMmiyZ7SP5Ncq0ZppZ9kCZiqArCVDxUqTVnPcvua1hv8KHBP/J76jcnkBiXfw/ktI8Owdcg==}
     peerDependencies:
       react: '>=16.8.0'
 
@@ -2332,7 +2332,7 @@ packages:
 
 snapshots:
 
-  '@airqo/icons-react@0.2.0(react@19.1.0)':
+  '@airqo/icons-react@0.2.6(react@19.1.0)':
     dependencies:
       fuse.js: 7.1.0
       react: 19.1.0

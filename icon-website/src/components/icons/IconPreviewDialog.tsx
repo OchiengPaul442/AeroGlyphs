@@ -70,9 +70,18 @@ export default function IconPreviewDialog({ icon, isOpen, onClose }: Props) {
 
 <${icon.name} size={${size}} color="${color}" />`;
 
-  // Assuming Flutter naming convention (lowercase)
-  const flutterCode = `Icon(
-  AirqoIcons.${icon.name.toLowerCase()},
+  const vueCode = `<template>
+  <${icon.name} :size="${size}" color="${color}" />
+</template>
+
+<script setup>
+import { ${icon.name} } from '@airqo/icons-vue';
+</script>`;
+
+  // Flutter naming convention (Aq prefix format)
+  const flutterCode = `import 'package:airqo_icons_flutter/airqo_icons_flutter.dart';
+
+${icon.name}(
   size: ${size}.0,
   color: Color(0xFF${color.replace("#", "")}),
 )`;
@@ -273,11 +282,38 @@ export default function IconPreviewDialog({ icon, isOpen, onClose }: Props) {
                         </div>
                       </div>
 
+                      {/* Vue Code */}
+                      <div className="bg-gray-50 dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700">
+                        <div className="flex justify-between items-center px-4 py-3 border-b border-gray-200 dark:border-gray-700">
+                          <div className="flex items-center gap-2">
+                            <div className="w-3 h-3 rounded-full bg-green-500"></div>
+                            <span className="text-sm font-medium text-gray-700 dark:text-gray-300">
+                              Vue 3
+                            </span>
+                          </div>
+                          <button
+                            onClick={() =>
+                              copyToClipboard(vueCode, "Vue code copied!")
+                            }
+                            className="flex items-center gap-1 px-2 py-1 text-xs text-blue-600 dark:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-900/20 rounded transition-colors"
+                            aria-label="Copy Vue code"
+                          >
+                            <Copy className="w-3 h-3" />
+                            Copy
+                          </button>
+                        </div>
+                        <div className="p-4">
+                          <pre className="text-sm text-gray-800 dark:text-gray-200 overflow-x-auto bg-transparent">
+                            <code>{vueCode}</code>
+                          </pre>
+                        </div>
+                      </div>
+
                       {/* Flutter Code */}
                       <div className="bg-gray-50 dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700">
                         <div className="flex justify-between items-center px-4 py-3 border-b border-gray-200 dark:border-gray-700">
                           <div className="flex items-center gap-2">
-                            <div className="w-3 h-3 rounded-full bg-cyan-500"></div>
+                            <div className="w-3 h-3 rounded-full bg-purple-500"></div>
                             <span className="text-sm font-medium text-gray-700 dark:text-gray-300">
                               Flutter
                             </span>
